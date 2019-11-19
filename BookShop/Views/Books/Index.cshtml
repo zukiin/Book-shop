@@ -1,0 +1,100 @@
+﻿@model IEnumerable<BookShop.Models.Book>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+	<tr>
+		<th>
+			@Html.DisplayNameFor(model => model.Genre.GenreName)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Title)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Description)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Author)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Edition)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.ISBN)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Quantity_In_Stock)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Price)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Publisher)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.PlaceOfPublication)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.YearOfPublication)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Image)
+		</th>
+		<th></th>
+	</tr>
+
+@foreach (var item in Model) {
+	<tr>
+		<td>
+			@Html.DisplayFor(modelItem => item.Genre.GenreName)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.Title)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.Description)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.Author)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.Edition)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.ISBN)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.Quantity_In_Stock)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.Price)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.Publisher)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.PlaceOfPublication)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.YearOfPublication)
+		</td>
+		<td>
+			<img src="data:image/png;base64,@Convert.ToBase64String(item.Image, 0, item.Image.Length)" style="width: 60px; height: 60px" alt="" />
+		</td>
+		<td>
+			@Html.ActionLink("Edit", "Edit", new { id = item.BookId }) |
+			@Html.ActionLink("Details", "Details", new { id = item.BookId }) |
+			@Html.ActionLink("Delete", "Delete", new { id = item.BookId })
+		</td>
+	</tr>
+}
+
+</table>

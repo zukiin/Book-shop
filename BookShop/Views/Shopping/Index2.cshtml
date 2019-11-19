@@ -1,0 +1,109 @@
+﻿@model IEnumerable<BookShop.Models.Shopping.Stock>
+@{
+	ViewBag.Title = "Shopping";
+	Layout = "~/Views/Shared/_LayoutF.cshtml";
+}
+
+<h2 class="title text-center">CATALOGUE</h2>
+
+<style>
+	.servicesBox .servicesImg img {
+		height: 172px;
+		width: 270px;
+	}
+
+	.DservicesImg img {
+		height: 162px;
+		width: 254px;
+	}
+
+	.FilterBox {
+		max-height: 200px;
+		overflow: auto;
+	}
+</style>
+@using (Html.BeginForm())
+{
+	<div id="dvFilterSearch">
+		@*<div class="mainHouse">
+				<div class="container">
+					<div class="housekeeping clearfix">
+						<div class="housekeepingLeft fl"><h1>@ViewBag.searchKey &nbsp; <span>@(!string.IsNullOrEmpty(ViewBag.searchKey) ? "I" : "")  &nbsp; @(Model != null ? Model.Count() : 0) records found</span></h1> </div>                     <div class="housekeepingRight fr" id="divFilter">
+							<div class="housekeepingInput"><input type="text" placeholder="Enter Keywords" class="houseComn" id="searchKey" name="searchKey" value="@ViewBag.searchKey" onkeypress="return onlynumericOrCharacter();"></div>                         <div class="housekeepingSearch"><button type="button" class="housesearchBtn" onclick="$(this).parent().parent().submit();"><img src="/images/searchIcon.png" alt="img" /></button></div>
+						</div>
+					</div>
+				</div>
+			</div>*@
+		<div class="mainServices clearfix">
+			<div class="container">
+				<!-- Start servicesRight-->
+				<div class="servicesRight">
+					@if (Model.Count() > 0)
+					{<!--Start pricelowHigh-->
+						<div class="pricelowHigh clearfix">
+							<!--Start Services Man-->
+							<div class="tabContent" id="tab1">
+								<div class="servicesPerson clearfix">
+									<ul class="prsonList">
+										@foreach (var item in Model)
+										{
+											<li>
+												<!--Start ServicesBox-->
+												<div class="servicesBox">
+													<div class="servicesImg">
+														<td>
+															<a href="@Url.Action("Details", "Items", new { id = item.StockNo })" title="View Details" , rel="nofollow"> </a>
+																<img src="data:image/png;base64,@Convert.ToBase64String(item.Image, 0, item.Image.Length)" style="width: 150px; height: 150px" alt="" />
+														</td>
+													</div>
+													<div class="nameLink">
+														<a title="View Product" href="/search/productDetail?pId=@item.StockNo">@item.Name</a>
+														<div class="byperson clearfix">
+															<h3>Category: @item.Name</h3>
+														</div>
+													</div>
+													<div class="rate clearfix">
+														<span class="fl">Price</span>
+														<span class="blueClr fr">@item.Price</span>
+													</div>
+												</div>                                                 <!--End ServicesBox-->
+											</li>
+										}
+									</ul>                                     <!--End ServicesBox-->
+								</div>                                 <!--End Services Man-->
+							</div>
+						</div> }
+					else
+					{
+						<div class="tabContent" id="tab3">
+							<!--Start Services Man-->
+							<div class="clearfix">
+								<!--Start detailServicesBox-->
+								<div class="detailservicesBox clearfix">
+									<div style="background-color: #fff; text-align: center; padding: 40% 0; ">
+										<h2>No Records found</h2>
+									</div>
+								</div>
+							</div>
+						</div>}
+				</div>
+			</div>
+		</div>
+		<br />         <!--Start main services-->
+	</div>	} <!--End main services-->
+@section Scripts{
+	<script type="text/javascript">
+         $(document).ready(function () {
+            debugger
+        if('@TempData["ProductAddedToCart"]'!='')
+        {
+         swal('@TempData["ProductAddedToCart"]', '', 'success');
+        }
+        });
+      $('#searchKey').keydown(function (e) {
+        if (e.keyCode == 13) {
+        $('#dvFilterSearch').parent().submit();
+        }
+         })
+	</script>
+}

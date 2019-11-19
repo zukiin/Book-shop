@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title style="font-family:Algerian">e-Book Shop</title>
+    <!-- Bootstrap Core CSS --> 
+    <link href="~/AdminContent/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- MetisMenu CSS -->  
+    <link href="~/AdminContent/metisMenu/dist/metisMenu.min.css" rel="stylesheet" />
+    <!-- Timeline CSS -->
+    <link href="~/AdminContent/dist/css/timeline.css" rel="stylesheet" />
+    <!-- Custom CSS -->  
+    <link href="~/AdminContent/dist/css/sb-admin-2.css" rel="stylesheet" /> 
+    <!-- Custom Fonts -->
+    <link href="~/AdminContent/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div>
+        <div id="wrapper">
+            <!-- Navigation -->
+			<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="/Home/Index">e-Book Shop</a>
+				</div>
+
+				<ul class="nav navbar-top-links navbar-right">
+					<li>
+						<a href="~/Home/Index"><i class="fa fa-home fa-fw"></i>HOME</a>
+					</li>
+				</ul>
+
+				<!-- /.navbar-top-links -->
+				<div class="navbar-default sidebar" role="navigation">
+					<div class="sidebar-nav navbar-collapse">
+						<ul class="nav" id="side-menu">
+							<li class="sidebar-search">
+								<div class="input-group custom-search-form">
+									<input type="text" class="form-control" placeholder="Search...">
+									<span class="input-group-btn">
+										<button class="btn btn-default" type="button">
+											<i class="fa fa-search"></i>
+										</button>
+									</span>
+								</div>
+								<!-- /input-group -->
+							</li>
+							@if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+							{
+								<li>
+									<a href="~/Home/Admin"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+								</li>
+								<li>
+									<a href="~/ShoppingCart/AllOrders"><i class="fa fa-building fa-fw"></i>View Orders</a>
+								</li>
+								<li>
+									<a href="~/Suppliers/Index"><i class="fa fa-file-movie-o fa-fw"></i>Manage Suppliers</a>
+								</li>
+								<li>
+									<a href="~/Categories/Index"><i class="fa fa-file-movie-o fa-fw"></i>Manage Categories</a>
+								</li>
+								<li>
+									<a href="~/Genres/Index"><i class="fa fa-file-movie-o fa-fw"></i>Manage Genres</a>
+								</li>
+								<li>
+									<a href="~/Books/Index"><i class="fa fa-building fa-fw"></i>Manage Books</a>
+								</li>
+								<li>
+									<a href="~/Roles/Index"><i class="fa fa-bar-chart-o fa-fw"></i> Role Manager</a>
+								</li>
+							}
+						</ul>
+					</div>
+					<!-- /.sidebar-collapse -->
+				</div>
+				<!-- /.navbar-static-side -->
+			</nav>
+           
+            <!-- /#page-wrapper -->
+        </div>
+        <!-- /#wrapper -->
+        <div id="page-wrapper">
+            @RenderBody()
+           
+            </div>
+        </div>
+
+  
+  
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Content/bower_components/morrisjs/morris.min.js"></script>
+
+    <script src="~/Content/bower_components/raphael/raphael-min.js"></script>
+
+    <script src="~/Scripts/flot-data.js"></script>
+
+    <script src="~/Content/bower_components/flot/excanvas.min.js"></script>
+
+    <script src="~/Content/bower_components/flot/jquery.flot.js"></script>
+
+    <script src="~/Content/bower_components/flot/jquery.flot.pie.js"></script>
+
+    <script src="~/Content/bower_components/flot/jquery.flot.resize.js"></script>
+
+    <script src="~/Content/bower_components/flot/jquery.flot.time.js"></script>
+
+    <script src="~/Content/bower_components/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+</body>
+</html>

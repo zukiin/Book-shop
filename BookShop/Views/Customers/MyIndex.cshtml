@@ -1,0 +1,54 @@
+﻿@model BookShop.Models.ViewModels.CustomerIndexData
+
+@{
+    ViewBag.Title = "Customers";
+}
+
+<h2 class="title text-center">@ViewBag.Title</h2>
+
+
+<table class="table">
+    <tr>
+        <th>Last Name</th>
+        <th>First Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Customers)
+    {
+        string selectedRow = "";
+        if (item.CustomerId == ViewBag.CustomerID)
+        {
+            selectedRow = "success";
+        }
+        <tr class="@selectedRow">
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.phone)
+            </td>
+
+            <td>
+                @Html.ActionLink("Select", "MyIndex", new { id = item.CustomerId }) |
+                @Html.ActionLink("Edit", "Edit", new { id = item.CustomerId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.CustomerId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CustomerId })
+            </td>
+        </tr>
+    }
+
+</table>
+
+    <p>
+     
+        <a href="javascript:void(0);" onclick="history.go(-1);">Go Back</a>
+    </p>

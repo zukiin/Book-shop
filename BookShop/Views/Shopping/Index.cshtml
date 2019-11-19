@@ -1,0 +1,80 @@
+﻿<br />
+@model  IEnumerable<BookShop.Models.Book>
+@{
+    /**/
+
+    ViewBag.Title = "Shopping";
+    Layout = "~/Views/Shared/_LayoutF.cshtml";
+}
+<link href="~/Content/Other Css/Productlisting.css" rel="stylesheet" />
+
+
+
+<div class="container">
+    <div class="well well-sm">
+        <strong>Category Title</strong>
+        <div class="btn-group">
+            <a href="#" id="list" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-th-list">
+                </span>List
+            </a> <a href="#" id="grid" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-th"></span>Grid
+            </a>
+        </div>
+    </div>
+    <div id="products" class="row list-group">
+        @foreach (var item in Model)
+        {
+
+            <div class="item  col-xs-4 col-lg-4">
+                <div class="thumbnail">
+                    <img src="data:image/png;base64,@Convert.ToBase64String(item.Image, 0, item.Image.Length)" style="width: 150px; height: 150px" alt="" />
+                    <div class="caption">
+                        <h4 class="group inner list-group-item-heading">
+                            <b> @Html.DisplayFor(expression: modelItem => item.Title)</b>
+                        </h4>
+                        <p class="group inner list-group-item-text">
+                            @Html.DisplayFor(expression: modelItem => item.Description)
+                        </p>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6">
+                                <p class="lead">
+                                    @Html.DisplayFor(expression: modelItem => item.Price)
+                                </p>
+                            </div>
+							<div class="col-xs-12 col-md-6">
+
+								@if (item.Quantity_In_Stock == 0)
+								{
+									<a href="@Url.Action(actionName: "add_to_cart", controllerName: "Shopping", routeValues: new {id = item.BookId})" class="btn disabled btn-default"><i class="fa fa-shopping-cart disabled"></i> Out of stock</a>
+									<a href="@Url.Action(actionName: "add_to_Wishlist", controllerName: "Shopping", routeValues: new {id = item.BookId})" class="btn btn-default"  onclick="this.form.submit(); this.disabled=true; this.value='Sending…';" ><i class="fa fa-heart"></i> Add to WishList</a>
+								}
+								else if (item.Quantity_In_Stock > 0)
+								{
+									<a href="@Url.Action(actionName: "add_to_cart", controllerName: "Shopping", routeValues: new {id = item.BookId})" class="btn btn-default" style="width:120px"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+									<br/>
+									<br/>
+									<a href="@Url.Action(actionName: "add_to_Wishlist", controllerName: "Shopping", routeValues: new {id = item.BookId})" class="btn btn-default"style="width:120px"><i class="fa fa-heart"></i> Rent</a>
+								}
+								else
+								{
+									<a href="@Url.Action(actionName: "add_to_Wishlist", controllerName: "Shopping", routeValues: new {id = item.BookId})" class="btn disabled btn-danger"><i class="fa fa-heart disabled"></i> Added to WishList</a>
+								}
+							</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+@if (ViewBag.Err != null)
+{
+
+}
+<script>
+    $(document).ready(function () {
+        $('#list').click(function (event) { event.preventDefault(); $('#products .item').addClass('list-group-item'); });
+        $('#grid').click(function (event) { event.preventDefault(); $('#products .item').removeClass('list-group-item'); $('#products .item').addClass('grid-group-item'); });
+    });
+</script>

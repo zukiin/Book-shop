@@ -1,0 +1,1175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{90D314C9-ED35-4729-BFB8-9512A712F1D6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BookShop</RootNamespace>
+    <AssemblyName>BookShop</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.0\lib\net451\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.0\lib\net451\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.4.0.0\lib\net451\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.0\lib\net451\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.0.0\lib\net451\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.0.0\lib\net451\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.4.0.0\lib\net451\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.0\lib\net451\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="BusinessLogic\Address_Business.cs" />
+    <Compile Include="BusinessLogic\Book_Business.cs" />
+    <Compile Include="BusinessLogic\Cart_Business.cs" />
+    <Compile Include="BusinessLogic\Category_Business.cs" />
+    <Compile Include="BusinessLogic\Customer_Business.cs" />
+    <Compile Include="BusinessLogic\Order_Business.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BooksController.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
+    <Compile Include="Controllers\GenresController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ShoppingController.cs" />
+    <Compile Include="Controllers\SuppliersController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910062234279_initial.cs" />
+    <Compile Include="Migrations\201910062234279_initial.Designer.cs">
+      <DependentUpon>201910062234279_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910062305099_shopping.cs" />
+    <Compile Include="Migrations\201910062305099_shopping.Designer.cs">
+      <DependentUpon>201910062305099_shopping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910071000090_shopping1.cs" />
+    <Compile Include="Migrations\201910071000090_shopping1.designer.cs">
+      <DependentUpon>201910071000090_shopping1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\CustomerEntity.cs" />
+    <Compile Include="Models\Genre.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Rental.cs" />
+    <Compile Include="Models\Rented_Item.cs" />
+    <Compile Include="Models\Shopping\Address.cs" />
+    <Compile Include="Models\CartEntity.cs" />
+    <Compile Include="Models\CartItemEntity.cs" />
+    <Compile Include="Models\Shopping\Company.cs" />
+    <Compile Include="Models\Shopping\Delivery.cs" />
+    <Compile Include="Models\Shopping\Invoice.cs" />
+    <Compile Include="Models\Shopping\Notifications.cs" />
+    <Compile Include="Models\Shopping\OrderAddressEntity.cs" />
+    <Compile Include="Models\Shopping\OrderDetailModel.cs" />
+    <Compile Include="Models\Shopping\OrderEntity.cs" />
+    <Compile Include="Models\Shopping\OrderItemEntity.cs" />
+    <Compile Include="Models\Shopping\OrderTrackingEntity.cs" />
+    <Compile Include="Models\Shopping\PaymentEntity.cs" />
+    <Compile Include="Models\Shopping\Stock.cs" />
+    <Compile Include="Models\Shopping\StockCart.cs" />
+    <Compile Include="Models\Shopping\StockCartItem.cs" />
+    <Compile Include="Models\Shopping\StockInvoice.cs" />
+    <Compile Include="Models\Shopping\StockOrder.cs" />
+    <Compile Include="Models\Shopping\StockOrderItem.cs" />
+    <Compile Include="Models\Shopping\Supplier.cs" />
+    <Compile Include="Models\Shopping\SupplierEntity.cs" />
+    <Compile Include="Models\Shopping\SupplierItem.cs" />
+    <Compile Include="Models\Shopping\SupplierQuote.cs" />
+    <Compile Include="Models\Shopping\WishList.cs" />
+    <Compile Include="Models\Shopping\WishList_Item.cs" />
+    <Compile Include="Models\Supplier.cs" />
+    <Compile Include="Models\ViewModels\Below_Order_Level_VM.cs" />
+    <Compile Include="Models\ViewModels\CustomerIndexData.cs" />
+    <Compile Include="Models\ViewModels\Out_of_stock_VM.cs" />
+    <Compile Include="Models\ViewModels\Payment_VM.cs" />
+    <Compile Include="Models\ViewModels\Users-in-Role_ViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdminContent\bootstrap-social\bootstrap-social.css" />
+    <Content Include="AdminContent\bootstrap\dist\css\bootstrap-theme.css" />
+    <Content Include="AdminContent\bootstrap\dist\css\bootstrap-theme.min.css" />
+    <Content Include="AdminContent\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="AdminContent\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="AdminContent\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="AdminContent\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="AdminContent\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="AdminContent\bootstrap\dist\js\npm.js" />
+    <Content Include="AdminContent\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="AdminContent\bootstrap\Gruntfile.js" />
+    <Content Include="AdminContent\bootstrap\grunt\bs-commonjs-generator.js" />
+    <Content Include="AdminContent\bootstrap\grunt\bs-glyphicons-data-generator.js" />
+    <Content Include="AdminContent\bootstrap\grunt\bs-lessdoc-parser.js" />
+    <Content Include="AdminContent\bootstrap\grunt\bs-raw-files-generator.js" />
+    <Content Include="AdminContent\bootstrap\js\affix.js" />
+    <Content Include="AdminContent\bootstrap\js\alert.js" />
+    <Content Include="AdminContent\bootstrap\js\button.js" />
+    <Content Include="AdminContent\bootstrap\js\carousel.js" />
+    <Content Include="AdminContent\bootstrap\js\collapse.js" />
+    <Content Include="AdminContent\bootstrap\js\dropdown.js" />
+    <Content Include="AdminContent\bootstrap\js\modal.js" />
+    <Content Include="AdminContent\bootstrap\js\popover.js" />
+    <Content Include="AdminContent\bootstrap\js\scrollspy.js" />
+    <Content Include="AdminContent\bootstrap\js\tab.js" />
+    <Content Include="AdminContent\bootstrap\js\tooltip.js" />
+    <Content Include="AdminContent\bootstrap\js\transition.js" />
+    <Content Include="AdminContent\bootstrap\package.js" />
+    <Content Include="AdminContent\datatables-plugins\api\average%28%29.js" />
+    <Content Include="AdminContent\datatables-plugins\api\column%28%29.title%28%29.js" />
+    <Content Include="AdminContent\datatables-plugins\api\columns%28%29.order%28%29.js" />
+    <Content Include="AdminContent\datatables-plugins\api\fnAddDataAndDisplay.js" />
+    <Content Include="AdminContent\datatables-plugins\api\fnAddTr.js" />
+    <Content Include="AdminContent\datatables-plugins\api\fnColumnIndexToVisible.js" />
+    <Content Include="AdminContent\datatables-plugins\api\fnDataUpdate.js" />
+    <Content Include="AdminContent\datatables-plugins\api\fnDisplayRow.js" />
+    <Content Include="AdminContent\datatables-plugins\api\fnDisplayStart.js" />
+    <Content Include="AdminContent\datatables-plugins\api\fnFakeRowspan.js" />
+    <Content Include="AdminContent\datatables-plugins\api\fnFilterAll.js" />
+    <Content Include="AdminContent\datatables-plugins\api\fnFilterClear.js" />
+    <Content Include="AdminContent\datatables-plugins\api\fnFilterOnReturn.js" />
+    <Content Include="AdminContent\datatables-plugins\api\fnFindCellRowIndexes.js" />
+    <Content Include="AdminContent\datatables-plugins\api\fnFindCellRowNodes.js" />
+    <Content Include="AdminContent\datatables-plugins\api\fnGetAdjacentTr.js" />
+    <Content Include="AdminContent\datatables-plugins\api\fnGetColumnData.js" />
+    <Content Include="AdminContent\datatables-plugins\api\fnGetColumnIndex.js" />
+    <Content Include="AdminContent\datatables-plugins\api\fnGetHiddenNodes.js" />
+    <Content Include="AdminContent\datatables-plugins\api\fnGetTd.js" />
+    <Content Include="AdminContent\datatables-plugins\api\fnGetTds.js" />
+    <Content Include="AdminContent\datatables-plugins\api\fnLengthChange.js" />
+    <Content Include="AdminContent\datatables-plugins\api\fnMultiFilter.js" />
+    <Content Include="AdminContent\datatables-plugins\api\fnPagingInfo.js" />
+    <Content Include="AdminContent\datatables-plugins\api\fnProcessingIndicator.js" />
+    <Content Include="AdminContent\datatables-plugins\api\fnReloadAjax.js" />
+    <Content Include="AdminContent\datatables-plugins\api\fnSetFilteringDelay.js" />
+    <Content Include="AdminContent\datatables-plugins\api\fnSortNeutral.js" />
+    <Content Include="AdminContent\datatables-plugins\api\fnStandingRedraw.js" />
+    <Content Include="AdminContent\datatables-plugins\api\fnVisibleToColumnIndex.js" />
+    <Content Include="AdminContent\datatables-plugins\api\index.html" />
+    <Content Include="AdminContent\datatables-plugins\api\page.jumpToData%28%29.js" />
+    <Content Include="AdminContent\datatables-plugins\api\sum%28%29.js" />
+    <Content Include="AdminContent\datatables-plugins\features\alphabetSearch\dataTables.alphabetSearch.css" />
+    <Content Include="AdminContent\datatables-plugins\features\alphabetSearch\dataTables.alphabetSearch.js" />
+    <Content Include="AdminContent\datatables-plugins\features\alphabetSearch\dataTables.alphabetSearch.min.js" />
+    <Content Include="AdminContent\datatables-plugins\features\lengthLinks\dataTables.lengthLinks.css" />
+    <Content Include="AdminContent\datatables-plugins\features\lengthLinks\dataTables.lengthLinks.js" />
+    <Content Include="AdminContent\datatables-plugins\features\lengthLinks\dataTables.lengthLinks.min.js" />
+    <Content Include="AdminContent\datatables-plugins\features\searchHighlight\dataTables.searchHighlight.css" />
+    <Content Include="AdminContent\datatables-plugins\features\searchHighlight\dataTables.searchHighlight.js" />
+    <Content Include="AdminContent\datatables-plugins\features\searchHighlight\dataTables.searchHighlight.min.js" />
+    <Content Include="AdminContent\datatables-plugins\filtering\index.html" />
+    <Content Include="AdminContent\datatables-plugins\filtering\row-based\range_dates.js" />
+    <Content Include="AdminContent\datatables-plugins\filtering\row-based\range_numbers.js" />
+    <Content Include="AdminContent\datatables-plugins\filtering\row-based\TableTools.ShowSelectedOnly.js" />
+    <Content Include="AdminContent\datatables-plugins\filtering\type-based\accent-neutralise.js" />
+    <Content Include="AdminContent\datatables-plugins\filtering\type-based\html.js" />
+    <Content Include="AdminContent\datatables-plugins\filtering\type-based\phoneNumber.js" />
+    <Content Include="AdminContent\datatables-plugins\i18n\index.html" />
+    <Content Include="AdminContent\datatables-plugins\integration\bootstrap\1\dataTables.bootstrap.css" />
+    <Content Include="AdminContent\datatables-plugins\integration\bootstrap\1\dataTables.bootstrap.js" />
+    <Content Include="AdminContent\datatables-plugins\integration\bootstrap\2\dataTables.bootstrap.css" />
+    <Content Include="AdminContent\datatables-plugins\integration\bootstrap\2\dataTables.bootstrap.js" />
+    <Content Include="AdminContent\datatables-plugins\integration\bootstrap\2\dataTables.bootstrap.min.js" />
+    <Content Include="AdminContent\datatables-plugins\integration\bootstrap\2\index.html" />
+    <Content Include="AdminContent\datatables-plugins\integration\bootstrap\3\dataTables.bootstrap.css" />
+    <Content Include="AdminContent\datatables-plugins\integration\bootstrap\3\dataTables.bootstrap.js" />
+    <Content Include="AdminContent\datatables-plugins\integration\bootstrap\3\dataTables.bootstrap.min.js" />
+    <Content Include="AdminContent\datatables-plugins\integration\bootstrap\3\index.html" />
+    <Content Include="AdminContent\datatables-plugins\integration\bootstrap\images\sort_asc.png" />
+    <Content Include="AdminContent\datatables-plugins\integration\bootstrap\images\sort_asc_disabled.png" />
+    <Content Include="AdminContent\datatables-plugins\integration\bootstrap\images\sort_both.png" />
+    <Content Include="AdminContent\datatables-plugins\integration\bootstrap\images\sort_desc.png" />
+    <Content Include="AdminContent\datatables-plugins\integration\bootstrap\images\sort_desc_disabled.png" />
+    <Content Include="AdminContent\datatables-plugins\integration\font-awesome\bootstrap.html" />
+    <Content Include="AdminContent\datatables-plugins\integration\font-awesome\dataTables.fontAwesome.css" />
+    <Content Include="AdminContent\datatables-plugins\integration\font-awesome\datatables.html" />
+    <Content Include="AdminContent\datatables-plugins\integration\font-awesome\foundation.html" />
+    <Content Include="AdminContent\datatables-plugins\integration\foundation\dataTables.foundation.css" />
+    <Content Include="AdminContent\datatables-plugins\integration\foundation\dataTables.foundation.js" />
+    <Content Include="AdminContent\datatables-plugins\integration\foundation\dataTables.foundation.min.js" />
+    <Content Include="AdminContent\datatables-plugins\integration\foundation\images\sort_asc.png" />
+    <Content Include="AdminContent\datatables-plugins\integration\foundation\images\sort_asc_disabled.png" />
+    <Content Include="AdminContent\datatables-plugins\integration\foundation\images\sort_both.png" />
+    <Content Include="AdminContent\datatables-plugins\integration\foundation\images\sort_desc.png" />
+    <Content Include="AdminContent\datatables-plugins\integration\foundation\images\sort_desc_disabled.png" />
+    <Content Include="AdminContent\datatables-plugins\integration\foundation\index.html" />
+    <Content Include="AdminContent\datatables-plugins\integration\jqueryui\dataTables.jqueryui.css" />
+    <Content Include="AdminContent\datatables-plugins\integration\jqueryui\dataTables.jqueryui.js" />
+    <Content Include="AdminContent\datatables-plugins\integration\jqueryui\dataTables.jqueryui.min.js" />
+    <Content Include="AdminContent\datatables-plugins\integration\jqueryui\index.html" />
+    <Content Include="AdminContent\datatables-plugins\pagination\ellipses.js" />
+    <Content Include="AdminContent\datatables-plugins\pagination\extjs.js" />
+    <Content Include="AdminContent\datatables-plugins\pagination\four_button.js" />
+    <Content Include="AdminContent\datatables-plugins\pagination\index.html" />
+    <Content Include="AdminContent\datatables-plugins\pagination\input.js" />
+    <Content Include="AdminContent\datatables-plugins\pagination\jPaginator\dataTables.jPaginator.js" />
+    <Content Include="AdminContent\datatables-plugins\pagination\scrolling.js" />
+    <Content Include="AdminContent\datatables-plugins\pagination\select.js" />
+    <Content Include="AdminContent\datatables-plugins\sorting\alt-string.js" />
+    <Content Include="AdminContent\datatables-plugins\sorting\anti-the.js" />
+    <Content Include="AdminContent\datatables-plugins\sorting\chinese-string.js" />
+    <Content Include="AdminContent\datatables-plugins\sorting\currency.js" />
+    <Content Include="AdminContent\datatables-plugins\sorting\custom-data-source\dom-checkbox.js" />
+    <Content Include="AdminContent\datatables-plugins\sorting\custom-data-source\dom-select.js" />
+    <Content Include="AdminContent\datatables-plugins\sorting\custom-data-source\dom-text.js" />
+    <Content Include="AdminContent\datatables-plugins\sorting\date-dd-MMM-yyyy.js" />
+    <Content Include="AdminContent\datatables-plugins\sorting\date-de.js" />
+    <Content Include="AdminContent\datatables-plugins\sorting\date-eu.js" />
+    <Content Include="AdminContent\datatables-plugins\sorting\date-euro.js" />
+    <Content Include="AdminContent\datatables-plugins\sorting\date-uk.js" />
+    <Content Include="AdminContent\datatables-plugins\sorting\datetime-moment.js" />
+    <Content Include="AdminContent\datatables-plugins\sorting\datetime-us.js" />
+    <Content Include="AdminContent\datatables-plugins\sorting\enum.js" />
+    <Content Include="AdminContent\datatables-plugins\sorting\file-size.js" />
+    <Content Include="AdminContent\datatables-plugins\sorting\formatted-numbers.js" />
+    <Content Include="AdminContent\datatables-plugins\sorting\index.html" />
+    <Content Include="AdminContent\datatables-plugins\sorting\ip-address.js" />
+    <Content Include="AdminContent\datatables-plugins\sorting\monthYear.js" />
+    <Content Include="AdminContent\datatables-plugins\sorting\natural.js" />
+    <Content Include="AdminContent\datatables-plugins\sorting\num-html.js" />
+    <Content Include="AdminContent\datatables-plugins\sorting\numeric-comma.js" />
+    <Content Include="AdminContent\datatables-plugins\sorting\percent.js" />
+    <Content Include="AdminContent\datatables-plugins\sorting\persian.js" />
+    <Content Include="AdminContent\datatables-plugins\sorting\scientific.js" />
+    <Content Include="AdminContent\datatables-plugins\sorting\signed-num.js" />
+    <Content Include="AdminContent\datatables-plugins\sorting\stringMonthYear.js" />
+    <Content Include="AdminContent\datatables-plugins\sorting\time.js" />
+    <Content Include="AdminContent\datatables-plugins\sorting\title-numeric.js" />
+    <Content Include="AdminContent\datatables-plugins\sorting\title-string.js" />
+    <Content Include="AdminContent\datatables-plugins\sorting\turkish-string.js" />
+    <Content Include="AdminContent\datatables-plugins\type-detection\currency.js" />
+    <Content Include="AdminContent\datatables-plugins\type-detection\date-uk.js" />
+    <Content Include="AdminContent\datatables-plugins\type-detection\file-size.js" />
+    <Content Include="AdminContent\datatables-plugins\type-detection\formatted-num.js" />
+    <Content Include="AdminContent\datatables-plugins\type-detection\index.html" />
+    <Content Include="AdminContent\datatables-plugins\type-detection\ip-address.js" />
+    <Content Include="AdminContent\datatables-plugins\type-detection\num-html.js" />
+    <Content Include="AdminContent\datatables-plugins\type-detection\numeric-comma.js" />
+    <Content Include="AdminContent\datatables-responsive\docs\api\responsive.index%28%29.xml" />
+    <Content Include="AdminContent\datatables-responsive\docs\api\responsive.rebuild%28%29.xml" />
+    <Content Include="AdminContent\datatables-responsive\docs\api\responsive.recalc%28%29.xml" />
+    <Content Include="AdminContent\datatables-responsive\docs\option\responsive.breakpoints.xml" />
+    <Content Include="AdminContent\datatables-responsive\docs\option\responsive.details.renderer.xml" />
+    <Content Include="AdminContent\datatables-responsive\docs\option\responsive.details.target.xml" />
+    <Content Include="AdminContent\datatables-responsive\docs\option\responsive.details.type.xml" />
+    <Content Include="AdminContent\datatables-responsive\docs\option\responsive.details.xml" />
+    <Content Include="AdminContent\datatables-responsive\docs\option\responsive.xml" />
+    <Content Include="AdminContent\datatables-responsive\examples\child-rows\column-control.xml" />
+    <Content Include="AdminContent\datatables-responsive\examples\child-rows\custom-renderer.xml" />
+    <Content Include="AdminContent\datatables-responsive\examples\child-rows\disable-child-rows.xml" />
+    <Content Include="AdminContent\datatables-responsive\examples\child-rows\index.xml" />
+    <Content Include="AdminContent\datatables-responsive\examples\child-rows\right-column.xml" />
+    <Content Include="AdminContent\datatables-responsive\examples\child-rows\whole-row-control.xml" />
+    <Content Include="AdminContent\datatables-responsive\examples\display-control\auto.xml" />
+    <Content Include="AdminContent\datatables-responsive\examples\display-control\classes.xml" />
+    <Content Include="AdminContent\datatables-responsive\examples\display-control\complexHeader.xml" />
+    <Content Include="AdminContent\datatables-responsive\examples\display-control\fixedHeader.xml" />
+    <Content Include="AdminContent\datatables-responsive\examples\display-control\index.xml" />
+    <Content Include="AdminContent\datatables-responsive\examples\display-control\init-classes.xml" />
+    <Content Include="AdminContent\datatables-responsive\examples\index.xml" />
+    <Content Include="AdminContent\datatables-responsive\examples\initialisation\ajax.xml" />
+    <Content Include="AdminContent\datatables-responsive\examples\initialisation\className.xml" />
+    <Content Include="AdminContent\datatables-responsive\examples\initialisation\default.xml" />
+    <Content Include="AdminContent\datatables-responsive\examples\initialisation\index.xml" />
+    <Content Include="AdminContent\datatables-responsive\examples\initialisation\new.xml" />
+    <Content Include="AdminContent\datatables-responsive\examples\initialisation\option.xml" />
+    <Content Include="AdminContent\datatables-responsive\examples\styling\bootstrap.xml" />
+    <Content Include="AdminContent\datatables-responsive\examples\styling\compact.xml" />
+    <Content Include="AdminContent\datatables-responsive\examples\styling\foundation.xml" />
+    <Content Include="AdminContent\datatables-responsive\examples\styling\index.xml" />
+    <Content Include="AdminContent\datatables-responsive\examples\styling\jqueryui.xml" />
+    <Content Include="AdminContent\datatables-responsive\examples\styling\scrolling.xml" />
+    <Content Include="AdminContent\datatables-responsive\js\dataTables.responsive.js" />
+    <Content Include="AdminContent\datatables-responsive\License.txt" />
+    <Content Include="AdminContent\datatables\license.txt" />
+    <Content Include="AdminContent\datatables\media\css\dataTables.bootstrap.css" />
+    <Content Include="AdminContent\datatables\media\css\dataTables.bootstrap.min.css" />
+    <Content Include="AdminContent\datatables\media\css\dataTables.foundation.css" />
+    <Content Include="AdminContent\datatables\media\css\dataTables.foundation.min.css" />
+    <Content Include="AdminContent\datatables\media\css\dataTables.jqueryui.css" />
+    <Content Include="AdminContent\datatables\media\css\dataTables.jqueryui.min.css" />
+    <Content Include="AdminContent\datatables\media\css\jquery.dataTables.css" />
+    <Content Include="AdminContent\datatables\media\css\jquery.dataTables.min.css" />
+    <Content Include="AdminContent\datatables\media\css\jquery.dataTables_themeroller.css" />
+    <Content Include="AdminContent\datatables\media\images\favicon.ico" />
+    <Content Include="AdminContent\datatables\media\images\sort_asc.png" />
+    <Content Include="AdminContent\datatables\media\images\sort_asc_disabled.png" />
+    <Content Include="AdminContent\datatables\media\images\sort_both.png" />
+    <Content Include="AdminContent\datatables\media\images\sort_desc.png" />
+    <Content Include="AdminContent\datatables\media\images\sort_desc_disabled.png" />
+    <Content Include="AdminContent\datatables\media\js\dataTables.bootstrap.js" />
+    <Content Include="AdminContent\datatables\media\js\dataTables.bootstrap.min.js" />
+    <Content Include="AdminContent\datatables\media\js\dataTables.foundation.js" />
+    <Content Include="AdminContent\datatables\media\js\dataTables.foundation.min.js" />
+    <Content Include="AdminContent\datatables\media\js\dataTables.jqueryui.js" />
+    <Content Include="AdminContent\datatables\media\js\dataTables.jqueryui.min.js" />
+    <Content Include="AdminContent\datatables\media\js\jquery.dataTables.js" />
+    <Content Include="AdminContent\datatables\media\js\jquery.dataTables.min.js" />
+    <Content Include="AdminContent\datatables\media\js\jquery.js" />
+    <Content Include="AdminContent\dist\css\sb-admin-2.css" />
+    <Content Include="AdminContent\dist\css\timeline.css" />
+    <Content Include="AdminContent\dist\js\sb-admin-2.js" />
+    <Content Include="AdminContent\flot.tooltip\js\excanvas.min.js" />
+    <Content Include="AdminContent\flot.tooltip\js\jquery.flot.js" />
+    <Content Include="AdminContent\flot.tooltip\js\jquery.flot.tooltip.js" />
+    <Content Include="AdminContent\flot.tooltip\js\jquery.flot.tooltip.min.js" />
+    <Content Include="AdminContent\flot.tooltip\js\jquery.flot.tooltip.source.js" />
+    <Content Include="AdminContent\flot\examples\ajax\index.html" />
+    <Content Include="AdminContent\flot\examples\annotating\index.html" />
+    <Content Include="AdminContent\flot\examples\axes-interacting\index.html" />
+    <Content Include="AdminContent\flot\examples\axes-multiple\index.html" />
+    <Content Include="AdminContent\flot\examples\axes-time-zones\date.js" />
+    <Content Include="AdminContent\flot\examples\axes-time-zones\index.html" />
+    <Content Include="AdminContent\flot\examples\axes-time\index.html" />
+    <Content Include="AdminContent\flot\examples\background.png" />
+    <Content Include="AdminContent\flot\examples\basic-options\index.html" />
+    <Content Include="AdminContent\flot\examples\basic-usage\index.html" />
+    <Content Include="AdminContent\flot\examples\canvas\index.html" />
+    <Content Include="AdminContent\flot\examples\categories\index.html" />
+    <Content Include="AdminContent\flot\examples\examples.css" />
+    <Content Include="AdminContent\flot\examples\image\hs-2004-27-a-large-web.jpg" />
+    <Content Include="AdminContent\flot\examples\image\index.html" />
+    <Content Include="AdminContent\flot\examples\index.html" />
+    <Content Include="AdminContent\flot\examples\interacting\index.html" />
+    <Content Include="AdminContent\flot\examples\navigate\arrow-down.gif" />
+    <Content Include="AdminContent\flot\examples\navigate\arrow-left.gif" />
+    <Content Include="AdminContent\flot\examples\navigate\arrow-right.gif" />
+    <Content Include="AdminContent\flot\examples\navigate\arrow-up.gif" />
+    <Content Include="AdminContent\flot\examples\navigate\index.html" />
+    <Content Include="AdminContent\flot\examples\percentiles\index.html" />
+    <Content Include="AdminContent\flot\examples\realtime\index.html" />
+    <Content Include="AdminContent\flot\examples\resize\index.html" />
+    <Content Include="AdminContent\flot\examples\selection\index.html" />
+    <Content Include="AdminContent\flot\examples\series-errorbars\index.html" />
+    <Content Include="AdminContent\flot\examples\series-pie\index.html" />
+    <Content Include="AdminContent\flot\examples\series-toggle\index.html" />
+    <Content Include="AdminContent\flot\examples\series-types\index.html" />
+    <Content Include="AdminContent\flot\examples\shared\jquery-ui\jquery-ui.min.css" />
+    <Content Include="AdminContent\flot\examples\stacking\index.html" />
+    <Content Include="AdminContent\flot\examples\symbols\index.html" />
+    <Content Include="AdminContent\flot\examples\threshold\index.html" />
+    <Content Include="AdminContent\flot\examples\tracking\index.html" />
+    <Content Include="AdminContent\flot\examples\visitors\index.html" />
+    <Content Include="AdminContent\flot\examples\zooming\index.html" />
+    <Content Include="AdminContent\flot\excanvas.js" />
+    <Content Include="AdminContent\flot\excanvas.min.js" />
+    <Content Include="AdminContent\flot\jquery.colorhelpers.js" />
+    <Content Include="AdminContent\flot\jquery.flot.canvas.js" />
+    <Content Include="AdminContent\flot\jquery.flot.categories.js" />
+    <Content Include="AdminContent\flot\jquery.flot.crosshair.js" />
+    <Content Include="AdminContent\flot\jquery.flot.errorbars.js" />
+    <Content Include="AdminContent\flot\jquery.flot.fillbetween.js" />
+    <Content Include="AdminContent\flot\jquery.flot.image.js" />
+    <Content Include="AdminContent\flot\jquery.flot.js" />
+    <Content Include="AdminContent\flot\jquery.flot.navigate.js" />
+    <Content Include="AdminContent\flot\jquery.flot.pie.js" />
+    <Content Include="AdminContent\flot\jquery.flot.resize.js" />
+    <Content Include="AdminContent\flot\jquery.flot.selection.js" />
+    <Content Include="AdminContent\flot\jquery.flot.stack.js" />
+    <Content Include="AdminContent\flot\jquery.flot.symbol.js" />
+    <Content Include="AdminContent\flot\jquery.flot.threshold.js" />
+    <Content Include="AdminContent\flot\jquery.flot.time.js" />
+    <Content Include="AdminContent\flot\jquery.js" />
+    <Content Include="AdminContent\flot\LICENSE.txt" />
+    <Content Include="AdminContent\font-awesome\css\font-awesome.css" />
+    <Content Include="AdminContent\font-awesome\css\font-awesome.min.css" />
+    <Content Include="AdminContent\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="AdminContent\holderjs\gulpfile.js" />
+    <Content Include="AdminContent\holderjs\holder.js" />
+    <Content Include="AdminContent\holderjs\src\augment.js" />
+    <Content Include="AdminContent\holderjs\src\holder.js" />
+    <Content Include="AdminContent\holderjs\src\ondomready.js" />
+    <Content Include="AdminContent\holderjs\src\polyfills.js" />
+    <Content Include="AdminContent\holderjs\test\image.jpg" />
+    <Content Include="AdminContent\holderjs\test\index.html" />
+    <Content Include="AdminContent\jquery\dist\jquery.js" />
+    <Content Include="AdminContent\jquery\dist\jquery.min.js" />
+    <Content Include="AdminContent\jquery\MIT-LICENSE.txt" />
+    <Content Include="AdminContent\jquery\src\ajax.js" />
+    <Content Include="AdminContent\jquery\src\ajax\jsonp.js" />
+    <Content Include="AdminContent\jquery\src\ajax\load.js" />
+    <Content Include="AdminContent\jquery\src\ajax\parseJSON.js" />
+    <Content Include="AdminContent\jquery\src\ajax\parseXML.js" />
+    <Content Include="AdminContent\jquery\src\ajax\script.js" />
+    <Content Include="AdminContent\jquery\src\ajax\var\nonce.js" />
+    <Content Include="AdminContent\jquery\src\ajax\var\rquery.js" />
+    <Content Include="AdminContent\jquery\src\ajax\xhr.js" />
+    <Content Include="AdminContent\jquery\src\attributes.js" />
+    <Content Include="AdminContent\jquery\src\attributes\attr.js" />
+    <Content Include="AdminContent\jquery\src\attributes\classes.js" />
+    <Content Include="AdminContent\jquery\src\attributes\prop.js" />
+    <Content Include="AdminContent\jquery\src\attributes\support.js" />
+    <Content Include="AdminContent\jquery\src\attributes\val.js" />
+    <Content Include="AdminContent\jquery\src\callbacks.js" />
+    <Content Include="AdminContent\jquery\src\core.js" />
+    <Content Include="AdminContent\jquery\src\core\access.js" />
+    <Content Include="AdminContent\jquery\src\core\init.js" />
+    <Content Include="AdminContent\jquery\src\core\parseHTML.js" />
+    <Content Include="AdminContent\jquery\src\core\ready.js" />
+    <Content Include="AdminContent\jquery\src\core\var\rsingleTag.js" />
+    <Content Include="AdminContent\jquery\src\css.js" />
+    <Content Include="AdminContent\jquery\src\css\addGetHookIf.js" />
+    <Content Include="AdminContent\jquery\src\css\curCSS.js" />
+    <Content Include="AdminContent\jquery\src\css\defaultDisplay.js" />
+    <Content Include="AdminContent\jquery\src\css\hiddenVisibleSelectors.js" />
+    <Content Include="AdminContent\jquery\src\css\support.js" />
+    <Content Include="AdminContent\jquery\src\css\swap.js" />
+    <Content Include="AdminContent\jquery\src\css\var\cssExpand.js" />
+    <Content Include="AdminContent\jquery\src\css\var\getStyles.js" />
+    <Content Include="AdminContent\jquery\src\css\var\isHidden.js" />
+    <Content Include="AdminContent\jquery\src\css\var\rmargin.js" />
+    <Content Include="AdminContent\jquery\src\css\var\rnumnonpx.js" />
+    <Content Include="AdminContent\jquery\src\data.js" />
+    <Content Include="AdminContent\jquery\src\data\accepts.js" />
+    <Content Include="AdminContent\jquery\src\data\Data.js" />
+    <Content Include="AdminContent\jquery\src\data\var\data_priv.js" />
+    <Content Include="AdminContent\jquery\src\data\var\data_user.js" />
+    <Content Include="AdminContent\jquery\src\deferred.js" />
+    <Content Include="AdminContent\jquery\src\deprecated.js" />
+    <Content Include="AdminContent\jquery\src\dimensions.js" />
+    <Content Include="AdminContent\jquery\src\effects.js" />
+    <Content Include="AdminContent\jquery\src\effects\animatedSelector.js" />
+    <Content Include="AdminContent\jquery\src\effects\Tween.js" />
+    <Content Include="AdminContent\jquery\src\event.js" />
+    <Content Include="AdminContent\jquery\src\event\ajax.js" />
+    <Content Include="AdminContent\jquery\src\event\alias.js" />
+    <Content Include="AdminContent\jquery\src\event\support.js" />
+    <Content Include="AdminContent\jquery\src\exports\amd.js" />
+    <Content Include="AdminContent\jquery\src\exports\global.js" />
+    <Content Include="AdminContent\jquery\src\intro.js" />
+    <Content Include="AdminContent\jquery\src\jquery.js" />
+    <Content Include="AdminContent\jquery\src\manipulation.js" />
+    <Content Include="AdminContent\jquery\src\manipulation\support.js" />
+    <Content Include="AdminContent\jquery\src\manipulation\var\rcheckableType.js" />
+    <Content Include="AdminContent\jquery\src\manipulation\_evalUrl.js" />
+    <Content Include="AdminContent\jquery\src\offset.js" />
+    <Content Include="AdminContent\jquery\src\outro.js" />
+    <Content Include="AdminContent\jquery\src\queue.js" />
+    <Content Include="AdminContent\jquery\src\queue\delay.js" />
+    <Content Include="AdminContent\jquery\src\selector-native.js" />
+    <Content Include="AdminContent\jquery\src\selector-sizzle.js" />
+    <Content Include="AdminContent\jquery\src\selector.js" />
+    <Content Include="AdminContent\jquery\src\serialize.js" />
+    <Content Include="AdminContent\jquery\src\sizzle\dist\sizzle.js" />
+    <Content Include="AdminContent\jquery\src\sizzle\dist\sizzle.min.js" />
+    <Content Include="AdminContent\jquery\src\traversing.js" />
+    <Content Include="AdminContent\jquery\src\traversing\findFilter.js" />
+    <Content Include="AdminContent\jquery\src\traversing\var\rneedsContext.js" />
+    <Content Include="AdminContent\jquery\src\var\arr.js" />
+    <Content Include="AdminContent\jquery\src\var\class2type.js" />
+    <Content Include="AdminContent\jquery\src\var\concat.js" />
+    <Content Include="AdminContent\jquery\src\var\hasOwn.js" />
+    <Content Include="AdminContent\jquery\src\var\indexOf.js" />
+    <Content Include="AdminContent\jquery\src\var\pnum.js" />
+    <Content Include="AdminContent\jquery\src\var\push.js" />
+    <Content Include="AdminContent\jquery\src\var\rnotwhite.js" />
+    <Content Include="AdminContent\jquery\src\var\slice.js" />
+    <Content Include="AdminContent\jquery\src\var\strundefined.js" />
+    <Content Include="AdminContent\jquery\src\var\support.js" />
+    <Content Include="AdminContent\jquery\src\var\toString.js" />
+    <Content Include="AdminContent\jquery\src\wrap.js" />
+    <Content Include="AdminContent\metisMenu\dist\metisMenu.css" />
+    <Content Include="AdminContent\metisMenu\dist\metisMenu.js" />
+    <Content Include="AdminContent\metisMenu\dist\metisMenu.min.css" />
+    <Content Include="AdminContent\metisMenu\dist\metisMenu.min.js" />
+    <Content Include="AdminContent\metisMenu\Gruntfile.js" />
+    <Content Include="AdminContent\metisMenu\src\metisMenu.css" />
+    <Content Include="AdminContent\metisMenu\src\metisMenu.js" />
+    <Content Include="AdminContent\mocha\media\logo.svg" />
+    <Content Include="AdminContent\mocha\mocha.css" />
+    <Content Include="AdminContent\mocha\mocha.js" />
+    <Content Include="AdminContent\morrisjs\examples\area-as-line.html" />
+    <Content Include="AdminContent\morrisjs\examples\area.html" />
+    <Content Include="AdminContent\morrisjs\examples\bar-colors.html" />
+    <Content Include="AdminContent\morrisjs\examples\bar-no-axes.html" />
+    <Content Include="AdminContent\morrisjs\examples\bar.html" />
+    <Content Include="AdminContent\morrisjs\examples\days.html" />
+    <Content Include="AdminContent\morrisjs\examples\decimal-custom-hover.html" />
+    <Content Include="AdminContent\morrisjs\examples\diagonal-xlabels-bar.html" />
+    <Content Include="AdminContent\morrisjs\examples\diagonal-xlabels.html" />
+    <Content Include="AdminContent\morrisjs\examples\donut-colors.html" />
+    <Content Include="AdminContent\morrisjs\examples\donut-formatter.html" />
+    <Content Include="AdminContent\morrisjs\examples\donut.html" />
+    <Content Include="AdminContent\morrisjs\examples\dst.html" />
+    <Content Include="AdminContent\morrisjs\examples\events.html" />
+    <Content Include="AdminContent\morrisjs\examples\goals.html" />
+    <Content Include="AdminContent\morrisjs\examples\lib\example.css" />
+    <Content Include="AdminContent\morrisjs\examples\lib\example.js" />
+    <Content Include="AdminContent\morrisjs\examples\months-no-smooth.html" />
+    <Content Include="AdminContent\morrisjs\examples\negative.html" />
+    <Content Include="AdminContent\morrisjs\examples\no-grid.html" />
+    <Content Include="AdminContent\morrisjs\examples\non-continuous.html" />
+    <Content Include="AdminContent\morrisjs\examples\non-date.html" />
+    <Content Include="AdminContent\morrisjs\examples\quarters.html" />
+    <Content Include="AdminContent\morrisjs\examples\resize.html" />
+    <Content Include="AdminContent\morrisjs\examples\stacked_bars.html" />
+    <Content Include="AdminContent\morrisjs\examples\timestamps.html" />
+    <Content Include="AdminContent\morrisjs\examples\updating.html" />
+    <Content Include="AdminContent\morrisjs\examples\weeks.html" />
+    <Content Include="AdminContent\morrisjs\examples\years.html" />
+    <Content Include="AdminContent\morrisjs\examples\_template.html" />
+    <Content Include="AdminContent\morrisjs\Gruntfile.js" />
+    <Content Include="AdminContent\morrisjs\morris.css" />
+    <Content Include="AdminContent\morrisjs\morris.js" />
+    <Content Include="AdminContent\morrisjs\morris.min.js" />
+    <Content Include="AdminContent\morrisjs\spec\specs.html" />
+    <Content Include="AdminContent\morrisjs\spec\viz\examples.js" />
+    <Content Include="AdminContent\morrisjs\spec\viz\exemplary\area0.png" />
+    <Content Include="AdminContent\morrisjs\spec\viz\exemplary\bar0.png" />
+    <Content Include="AdminContent\morrisjs\spec\viz\exemplary\line0.png" />
+    <Content Include="AdminContent\morrisjs\spec\viz\exemplary\stacked_bar0.png" />
+    <Content Include="AdminContent\morrisjs\spec\viz\test.html" />
+    <Content Include="AdminContent\morrisjs\spec\viz\visual_specs.js" />
+    <Content Include="AdminContent\raphael\dev\amdDev.js" />
+    <Content Include="AdminContent\raphael\dev\index.js" />
+    <Content Include="AdminContent\raphael\dev\require.js" />
+    <Content Include="AdminContent\raphael\license.txt" />
+    <Content Include="AdminContent\raphael\raphael-min.js" />
+    <Content Include="AdminContent\raphael\raphael.js" />
+    <Content Include="Content\bootstrap-datepicker.min.css" />
+    <Content Include="Content\bootstrap-datetimepicker.css" />
+    <Content Include="Content\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\datatables.min.css" />
+    <Content Include="Content\datepicker.css" />
+    <Content Include="Content\Images\book.jpg" />
+    <Content Include="Content\Images\book2.jpg" />
+    <Content Include="Content\Images\books.jpg" />
+    <Content Include="Content\Images\heart.jpg" />
+    <Content Include="Content\jquery.steps.css" />
+    <Content Include="Content\StyleSheet1.css" />
+    <Content Include="Content\StyleSheet2.css" />
+    <Content Include="Content\sweetalert.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="AdminContent\bootstrap-social\.bower.json" />
+    <Content Include="AdminContent\bootstrap-social\.editorconfig" />
+    <Content Include="AdminContent\bootstrap-social\.gitignore" />
+    <Content Include="AdminContent\bootstrap-social\bootstrap-social.less" />
+    <Content Include="AdminContent\bootstrap-social\bootstrap-social.scss" />
+    <Content Include="AdminContent\bootstrap-social\bower.json" />
+    <Content Include="AdminContent\bootstrap-social\README.md" />
+    <Content Include="AdminContent\bootstrap\.bower.json" />
+    <Content Include="AdminContent\bootstrap\bower.json" />
+    <Content Include="AdminContent\bootstrap\CHANGELOG.md" />
+    <Content Include="AdminContent\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <Content Include="AdminContent\bootstrap\dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="AdminContent\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="AdminContent\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="AdminContent\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="AdminContent\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="AdminContent\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="AdminContent\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="AdminContent\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="AdminContent\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="AdminContent\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="AdminContent\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="AdminContent\bootstrap\grunt\.jshintrc" />
+    <Content Include="AdminContent\bootstrap\grunt\configBridge.json" />
+    <Content Include="AdminContent\bootstrap\grunt\sauce_browsers.yml" />
+    <Content Include="AdminContent\bootstrap\js\.jscsrc" />
+    <Content Include="AdminContent\bootstrap\js\.jshintrc" />
+    <Content Include="AdminContent\bootstrap\less\.csscomb.json" />
+    <Content Include="AdminContent\bootstrap\less\.csslintrc" />
+    <Content Include="AdminContent\bootstrap\less\alerts.less" />
+    <Content Include="AdminContent\bootstrap\less\badges.less" />
+    <Content Include="AdminContent\bootstrap\less\bootstrap.less" />
+    <Content Include="AdminContent\bootstrap\less\breadcrumbs.less" />
+    <Content Include="AdminContent\bootstrap\less\button-groups.less" />
+    <Content Include="AdminContent\bootstrap\less\buttons.less" />
+    <Content Include="AdminContent\bootstrap\less\carousel.less" />
+    <Content Include="AdminContent\bootstrap\less\close.less" />
+    <Content Include="AdminContent\bootstrap\less\code.less" />
+    <Content Include="AdminContent\bootstrap\less\component-animations.less" />
+    <Content Include="AdminContent\bootstrap\less\dropdowns.less" />
+    <Content Include="AdminContent\bootstrap\less\forms.less" />
+    <Content Include="AdminContent\bootstrap\less\glyphicons.less" />
+    <Content Include="AdminContent\bootstrap\less\grid.less" />
+    <Content Include="AdminContent\bootstrap\less\input-groups.less" />
+    <Content Include="AdminContent\bootstrap\less\jumbotron.less" />
+    <Content Include="AdminContent\bootstrap\less\labels.less" />
+    <Content Include="AdminContent\bootstrap\less\list-group.less" />
+    <Content Include="AdminContent\bootstrap\less\media.less" />
+    <Content Include="AdminContent\bootstrap\less\mixins.less" />
+    <Content Include="AdminContent\bootstrap\less\mixins\alerts.less" />
+    <Content Include="AdminContent\bootstrap\less\mixins\background-variant.less" />
+    <Content Include="AdminContent\bootstrap\less\mixins\border-radius.less" />
+    <Content Include="AdminContent\bootstrap\less\mixins\buttons.less" />
+    <Content Include="AdminContent\bootstrap\less\mixins\center-block.less" />
+    <Content Include="AdminContent\bootstrap\less\mixins\clearfix.less" />
+    <Content Include="AdminContent\bootstrap\less\mixins\forms.less" />
+    <Content Include="AdminContent\bootstrap\less\mixins\gradients.less" />
+    <Content Include="AdminContent\bootstrap\less\mixins\grid-framework.less" />
+    <Content Include="AdminContent\bootstrap\less\mixins\grid.less" />
+    <Content Include="AdminContent\bootstrap\less\mixins\hide-text.less" />
+    <Content Include="AdminContent\bootstrap\less\mixins\image.less" />
+    <Content Include="AdminContent\bootstrap\less\mixins\labels.less" />
+    <Content Include="AdminContent\bootstrap\less\mixins\list-group.less" />
+    <Content Include="AdminContent\bootstrap\less\mixins\nav-divider.less" />
+    <Content Include="AdminContent\bootstrap\less\mixins\nav-vertical-align.less" />
+    <Content Include="AdminContent\bootstrap\less\mixins\opacity.less" />
+    <Content Include="AdminContent\bootstrap\less\mixins\pagination.less" />
+    <Content Include="AdminContent\bootstrap\less\mixins\panels.less" />
+    <Content Include="AdminContent\bootstrap\less\mixins\progress-bar.less" />
+    <Content Include="AdminContent\bootstrap\less\mixins\reset-filter.less" />
+    <Content Include="AdminContent\bootstrap\less\mixins\reset-text.less" />
+    <Content Include="AdminContent\bootstrap\less\mixins\resize.less" />
+    <Content Include="AdminContent\bootstrap\less\mixins\responsive-visibility.less" />
+    <Content Include="AdminContent\bootstrap\less\mixins\size.less" />
+    <Content Include="AdminContent\bootstrap\less\mixins\tab-focus.less" />
+    <Content Include="AdminContent\bootstrap\less\mixins\table-row.less" />
+    <Content Include="AdminContent\bootstrap\less\mixins\text-emphasis.less" />
+    <Content Include="AdminContent\bootstrap\less\mixins\text-overflow.less" />
+    <Content Include="AdminContent\bootstrap\less\mixins\vendor-prefixes.less" />
+    <Content Include="AdminContent\bootstrap\less\modals.less" />
+    <Content Include="AdminContent\bootstrap\less\navbar.less" />
+    <Content Include="AdminContent\bootstrap\less\navs.less" />
+    <Content Include="AdminContent\bootstrap\less\normalize.less" />
+    <Content Include="AdminContent\bootstrap\less\pager.less" />
+    <Content Include="AdminContent\bootstrap\less\pagination.less" />
+    <Content Include="AdminContent\bootstrap\less\panels.less" />
+    <Content Include="AdminContent\bootstrap\less\popovers.less" />
+    <Content Include="AdminContent\bootstrap\less\print.less" />
+    <Content Include="AdminContent\bootstrap\less\progress-bars.less" />
+    <Content Include="AdminContent\bootstrap\less\responsive-embed.less" />
+    <Content Include="AdminContent\bootstrap\less\responsive-utilities.less" />
+    <Content Include="AdminContent\bootstrap\less\scaffolding.less" />
+    <Content Include="AdminContent\bootstrap\less\tables.less" />
+    <Content Include="AdminContent\bootstrap\less\theme.less" />
+    <Content Include="AdminContent\bootstrap\less\thumbnails.less" />
+    <Content Include="AdminContent\bootstrap\less\tooltip.less" />
+    <Content Include="AdminContent\bootstrap\less\type.less" />
+    <Content Include="AdminContent\bootstrap\less\utilities.less" />
+    <Content Include="AdminContent\bootstrap\less\variables.less" />
+    <Content Include="AdminContent\bootstrap\less\wells.less" />
+    <Content Include="AdminContent\bootstrap\LICENSE" />
+    <Content Include="AdminContent\bootstrap\nuget\bootstrap.less.nuspec" />
+    <Content Include="AdminContent\bootstrap\nuget\bootstrap.nuspec" />
+    <Content Include="AdminContent\bootstrap\nuget\MyGet.ps1" />
+    <Content Include="AdminContent\bootstrap\package.json" />
+    <Content Include="AdminContent\bootstrap\README.md" />
+    <Content Include="AdminContent\datatables-plugins\.bower.json" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Afrikaans.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Albanian.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Arabic.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Azerbaijan.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Bangla.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Belarusian.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Bulgarian.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Catalan.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Chinese-traditional.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Chinese.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Croatian.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Czech.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Danish.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Dutch.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\English.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Estonian.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Filipino.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Finnish.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\French.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Galician.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Georgian.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\German.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Greek.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Gujarati.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Hebrew.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Hindi.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Hungarian.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Icelandic.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Indonesian-Alternative.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Indonesian.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Irish.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Italian.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Japanese.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Korean.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Latvian.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Lithuanian.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Macedonian.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Malay.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Norwegian.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Persian.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Polish.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Portuguese-Brasil.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Portuguese.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Romanian.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Russian.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Serbian.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Slovak.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Slovenian.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Spanish.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Swahili.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Swedish.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Tamil.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Thai.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Turkish.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Ukranian.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Urdu.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Uzbek.lang" />
+    <Content Include="AdminContent\datatables-plugins\i18n\Vietnamese.lang" />
+    <Content Include="AdminContent\datatables-plugins\integration\jqueryui\dataTables.jqueryui.scss" />
+    <Content Include="AdminContent\datatables-plugins\make.sh" />
+    <Content Include="AdminContent\datatables-plugins\README.md" />
+    <Content Include="AdminContent\datatables-responsive\.bower.json" />
+    <Content Include="AdminContent\datatables-responsive\.gitignore" />
+    <Content Include="AdminContent\datatables-responsive\bower.json" />
+    <Content Include="AdminContent\datatables-responsive\css\responsive.bootstrap.scss" />
+    <Content Include="AdminContent\datatables-responsive\css\responsive.dataTables.scss" />
+    <Content Include="AdminContent\datatables-responsive\css\responsive.foundation.scss" />
+    <Content Include="AdminContent\datatables-responsive\css\responsive.jqueryui.scss" />
+    <Content Include="AdminContent\datatables-responsive\make.sh" />
+    <Content Include="AdminContent\datatables-responsive\Readme.md" />
+    <Content Include="AdminContent\datatables\.bower.json" />
+    <Content Include="AdminContent\datatables\bower.json" />
+    <Content Include="AdminContent\datatables\Contributing.md" />
+    <Content Include="AdminContent\datatables\media\images\Sorting icons.psd" />
+    <Content Include="AdminContent\datatables\Readme.md" />
+    <Content Include="AdminContent\flot.tooltip\.bower.json" />
+    <Content Include="AdminContent\flot.tooltip\bower.json" />
+    <Content Include="AdminContent\flot\.bower.json" />
+    <Content Include="AdminContent\flot\.gitignore" />
+    <Content Include="AdminContent\flot\.travis.yml" />
+    <Content Include="AdminContent\flot\API.md" />
+    <Content Include="AdminContent\flot\component.json" />
+    <Content Include="AdminContent\flot\CONTRIBUTING.md" />
+    <Content Include="AdminContent\flot\examples\ajax\data-eu-gdp-growth-1.json" />
+    <Content Include="AdminContent\flot\examples\ajax\data-eu-gdp-growth-2.json" />
+    <Content Include="AdminContent\flot\examples\ajax\data-eu-gdp-growth-3.json" />
+    <Content Include="AdminContent\flot\examples\ajax\data-eu-gdp-growth-4.json" />
+    <Content Include="AdminContent\flot\examples\ajax\data-eu-gdp-growth-5.json" />
+    <Content Include="AdminContent\flot\examples\ajax\data-eu-gdp-growth.json" />
+    <Content Include="AdminContent\flot\examples\ajax\data-japan-gdp-growth.json" />
+    <Content Include="AdminContent\flot\examples\ajax\data-usa-gdp-growth.json" />
+    <Content Include="AdminContent\flot\examples\axes-time-zones\tz\africa" />
+    <Content Include="AdminContent\flot\examples\axes-time-zones\tz\antarctica" />
+    <Content Include="AdminContent\flot\examples\axes-time-zones\tz\asia" />
+    <Content Include="AdminContent\flot\examples\axes-time-zones\tz\australasia" />
+    <Content Include="AdminContent\flot\examples\axes-time-zones\tz\backward" />
+    <Content Include="AdminContent\flot\examples\axes-time-zones\tz\etcetera" />
+    <Content Include="AdminContent\flot\examples\axes-time-zones\tz\europe" />
+    <Content Include="AdminContent\flot\examples\axes-time-zones\tz\factory" />
+    <Content Include="AdminContent\flot\examples\axes-time-zones\tz\iso3166.tab" />
+    <Content Include="AdminContent\flot\examples\axes-time-zones\tz\leapseconds" />
+    <Content Include="AdminContent\flot\examples\axes-time-zones\tz\northamerica" />
+    <Content Include="AdminContent\flot\examples\axes-time-zones\tz\pacificnew" />
+    <Content Include="AdminContent\flot\examples\axes-time-zones\tz\solar87" />
+    <Content Include="AdminContent\flot\examples\axes-time-zones\tz\solar88" />
+    <Content Include="AdminContent\flot\examples\axes-time-zones\tz\solar89" />
+    <Content Include="AdminContent\flot\examples\axes-time-zones\tz\southamerica" />
+    <Content Include="AdminContent\flot\examples\axes-time-zones\tz\systemv" />
+    <Content Include="AdminContent\flot\examples\axes-time-zones\tz\yearistype.sh" />
+    <Content Include="AdminContent\flot\examples\axes-time-zones\tz\zone.tab" />
+    <Content Include="AdminContent\flot\FAQ.md" />
+    <Content Include="AdminContent\flot\flot.jquery.json" />
+    <Content Include="AdminContent\flot\Makefile" />
+    <Content Include="AdminContent\flot\NEWS.md" />
+    <Content Include="AdminContent\flot\package.json" />
+    <Content Include="AdminContent\flot\PLUGINS.md" />
+    <Content Include="AdminContent\flot\README.md" />
+    <Content Include="AdminContent\font-awesome\.bower.json" />
+    <Content Include="AdminContent\font-awesome\.gitignore" />
+    <Content Include="AdminContent\font-awesome\.npmignore" />
+    <Content Include="AdminContent\font-awesome\bower.json" />
+    <Content Include="AdminContent\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="AdminContent\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="AdminContent\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="AdminContent\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="AdminContent\font-awesome\less\bordered-pulled.less" />
+    <Content Include="AdminContent\font-awesome\less\core.less" />
+    <Content Include="AdminContent\font-awesome\less\extras.less" />
+    <Content Include="AdminContent\font-awesome\less\fixed-width.less" />
+    <Content Include="AdminContent\font-awesome\less\font-awesome.less" />
+    <Content Include="AdminContent\font-awesome\less\icons.less" />
+    <Content Include="AdminContent\font-awesome\less\larger.less" />
+    <Content Include="AdminContent\font-awesome\less\list.less" />
+    <Content Include="AdminContent\font-awesome\less\mixins.less" />
+    <Content Include="AdminContent\font-awesome\less\path.less" />
+    <Content Include="AdminContent\font-awesome\less\rotated-flipped.less" />
+    <Content Include="AdminContent\font-awesome\less\spinning.less" />
+    <Content Include="AdminContent\font-awesome\less\stacked.less" />
+    <Content Include="AdminContent\font-awesome\less\variables.less" />
+    <Content Include="AdminContent\font-awesome\scss\font-awesome.scss" />
+    <Content Include="AdminContent\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="AdminContent\font-awesome\scss\_core.scss" />
+    <Content Include="AdminContent\font-awesome\scss\_extras.scss" />
+    <Content Include="AdminContent\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="AdminContent\font-awesome\scss\_icons.scss" />
+    <Content Include="AdminContent\font-awesome\scss\_larger.scss" />
+    <Content Include="AdminContent\font-awesome\scss\_list.scss" />
+    <Content Include="AdminContent\font-awesome\scss\_mixins.scss" />
+    <Content Include="AdminContent\font-awesome\scss\_path.scss" />
+    <Content Include="AdminContent\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="AdminContent\font-awesome\scss\_spinning.scss" />
+    <Content Include="AdminContent\font-awesome\scss\_stacked.scss" />
+    <Content Include="AdminContent\font-awesome\scss\_variables.scss" />
+    <Content Include="AdminContent\holderjs\.bower.json" />
+    <Content Include="AdminContent\holderjs\.gitattributes" />
+    <Content Include="AdminContent\holderjs\.gitignore" />
+    <Content Include="AdminContent\holderjs\.jshintrc" />
+    <Content Include="AdminContent\holderjs\bower.json" />
+    <Content Include="AdminContent\holderjs\composer.json" />
+    <Content Include="AdminContent\holderjs\package.json" />
+    <Content Include="AdminContent\holderjs\README.md" />
+    <Content Include="AdminContent\holderjs\test\.gitignore" />
+    <Content Include="AdminContent\jquery\.bower.json" />
+    <Content Include="AdminContent\jquery\bower.json" />
+    <Content Include="AdminContent\jquery\dist\jquery.min.map" />
+    <Content Include="AdminContent\jquery\src\sizzle\dist\sizzle.min.map" />
+    <Content Include="AdminContent\metisMenu\.bower.json" />
+    <Content Include="AdminContent\metisMenu\bower.json" />
+    <Content Include="AdminContent\metisMenu\LICENSE" />
+    <Content Include="AdminContent\metisMenu\package.json" />
+    <Content Include="AdminContent\metisMenu\README.md" />
+    <Content Include="AdminContent\mocha\.bower.json" />
+    <Content Include="AdminContent\mocha\bower.json" />
+    <Content Include="AdminContent\mocha\History.md" />
+    <Content Include="AdminContent\mocha\LICENSE" />
+    <Content Include="AdminContent\mocha\Readme.md" />
+    <Content Include="AdminContent\morrisjs\.bower.json" />
+    <Content Include="AdminContent\morrisjs\.gitignore" />
+    <Content Include="AdminContent\morrisjs\.travis.yml" />
+    <Content Include="AdminContent\morrisjs\bower.json" />
+    <Content Include="AdminContent\morrisjs\bower.travis.json" />
+    <Content Include="AdminContent\morrisjs\less\morris.core.less" />
+    <Content Include="AdminContent\morrisjs\lib\morris.area.coffee" />
+    <Content Include="AdminContent\morrisjs\lib\morris.bar.coffee" />
+    <Content Include="AdminContent\morrisjs\lib\morris.coffee" />
+    <Content Include="AdminContent\morrisjs\lib\morris.donut.coffee" />
+    <Content Include="AdminContent\morrisjs\lib\morris.grid.coffee" />
+    <Content Include="AdminContent\morrisjs\lib\morris.hover.coffee" />
+    <Content Include="AdminContent\morrisjs\lib\morris.line.coffee" />
+    <Content Include="AdminContent\morrisjs\package.json" />
+    <Content Include="AdminContent\morrisjs\README.md" />
+    <Content Include="AdminContent\morrisjs\spec\lib\area\area_spec.coffee" />
+    <Content Include="AdminContent\morrisjs\spec\lib\bar\bar_spec.coffee" />
+    <Content Include="AdminContent\morrisjs\spec\lib\bar\colours.coffee" />
+    <Content Include="AdminContent\morrisjs\spec\lib\commas_spec.coffee" />
+    <Content Include="AdminContent\morrisjs\spec\lib\donut\donut_spec.coffee" />
+    <Content Include="AdminContent\morrisjs\spec\lib\grid\auto_grid_lines_spec.coffee" />
+    <Content Include="AdminContent\morrisjs\spec\lib\grid\set_data_spec.coffee" />
+    <Content Include="AdminContent\morrisjs\spec\lib\grid\y_label_format_spec.coffee" />
+    <Content Include="AdminContent\morrisjs\spec\lib\hover_spec.coffee" />
+    <Content Include="AdminContent\morrisjs\spec\lib\label_series_spec.coffee" />
+    <Content Include="AdminContent\morrisjs\spec\lib\line\line_spec.coffee" />
+    <Content Include="AdminContent\morrisjs\spec\lib\pad_spec.coffee" />
+    <Content Include="AdminContent\morrisjs\spec\lib\parse_time_spec.coffee" />
+    <Content Include="AdminContent\morrisjs\spec\support\placeholder.coffee" />
+    <Content Include="AdminContent\morrisjs\spec\viz\run.sh" />
+    <Content Include="AdminContent\raphael\.bower.json" />
+    <Content Include="AdminContent\raphael\bower.json" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Genres\Create.cshtml" />
+    <Content Include="Views\Genres\Delete.cshtml" />
+    <Content Include="Views\Genres\Details.cshtml" />
+    <Content Include="Views\Genres\Edit.cshtml" />
+    <Content Include="Views\Genres\Index.cshtml" />
+    <Content Include="Views\Suppliers\Create.cshtml" />
+    <Content Include="Views\Suppliers\Delete.cshtml" />
+    <Content Include="Views\Suppliers\Details.cshtml" />
+    <Content Include="Views\Suppliers\Edit.cshtml" />
+    <Content Include="Views\Suppliers\Index.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Shared\_LayoutPage.cshtml" />
+    <Content Include="Views\Categories\Create.cshtml" />
+    <Content Include="Views\Categories\Delete.cshtml" />
+    <Content Include="Views\Categories\Details.cshtml" />
+    <Content Include="Views\Categories\Edit.cshtml" />
+    <Content Include="Views\Categories\Index.cshtml" />
+    <Content Include="Views\Books\Create.cshtml" />
+    <Content Include="Views\Books\Delete.cshtml" />
+    <Content Include="Views\Books\Details.cshtml" />
+    <Content Include="Views\Books\Edit.cshtml" />
+    <Content Include="Views\Books\Index.cshtml" />
+    <Content Include="Views\Shopping\DeliveryOption.cshtml" />
+    <Content Include="Views\Shopping\HowToGetMyOrder.cshtml" />
+    <Content Include="Views\Shopping\Index.cshtml" />
+    <Content Include="Views\Shopping\Index2.cshtml" />
+    <Content Include="Views\Shopping\Payment.cshtml" />
+    <Content Include="Views\Shopping\Payment_Cancelled.cshtml" />
+    <Content Include="Views\Shopping\Payment_Successfull.cshtml" />
+    <Content Include="Views\Shopping\Return_Url.cshtml" />
+    <Content Include="Views\Shopping\ShoppingCart.cshtml" />
+    <Content Include="Views\Shopping\WishList.cshtml" />
+    <Content Include="Views\Shared\_LayoutF.cshtml" />
+    <Content Include="Views\Home\Admin.cshtml" />
+    <Content Include="Views\Customers\Create.cshtml" />
+    <Content Include="Views\Customers\Delete.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Customers\Edit.cshtml" />
+    <Content Include="Views\Customers\MyIndex.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\PayFast\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201910062234279_initial.resx">
+      <DependentUpon>201910062234279_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910062305099_shopping.resx">
+      <DependentUpon>201910062305099_shopping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910071000090_shopping1.resx">
+      <DependentUpon>201910071000090_shopping1.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60985</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:60985/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

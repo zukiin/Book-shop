@@ -1,0 +1,73 @@
+﻿@model IEnumerable<MontclairModels.OnlineStore.WishList_Item>
+@using MontclairModels.DAL;
+@{
+	ViewBag.Title = "My Wish List";
+	Layout = "~/Views/Shared/_LayoutF.cshtml";
+}
+<div class="panel panel-success">
+	<h2 class="title text-center">@ViewBag.Title</h2>
+
+	@{
+		ApplicationDbContext db = new ApplicationDbContext();
+
+	}
+
+
+	<table class="table table-striped table-condensed  ">
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.item_id)
+			</th>
+			<th>
+				Picture
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.price)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Date_Created)
+			</th>
+			<th></th>
+		</tr>
+
+		@foreach (var item in Model)
+		{
+			var imgid = item.item_id;
+			var img = db.ItemEntity.Find(imgid);
+			var ig = img.Picture;
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.item_id)
+				</td>
+				<td>
+
+					@if (ig != null)
+					{
+						var base64 = Convert.ToBase64String(ig);
+						var imgSrc = string.Format("data:image/gif;base64,{0}", base64);
+						<img src="@imgSrc" width="60" height="70" />
+					}
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.price)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Date_Created)
+				</td>
+				<td>
+					@if (item.isAvailable == false)
+					{
+						<a href="@Url.Action(actionName: "add_to_cart", controllerName: "Shopping", routeValues: new {id = item.item_id})" class="btn disabled btn-default"><i class="fa fa-shopping-cart disabled"></i> Out of stock</a>
+
+					}
+					else
+					{
+						<a href="@Url.Action(actionName: "add_to_cart", controllerName: "Shopping", routeValues: new {id = item.item_id})" class="btn btn-default"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+						<a href="@Url.Action("remove_from_WishList", "Shopping", new {id = item.WishList_Item_Id})" class="btn btn-danger"><i class="fa fa-times"></i> Remove from Wish List</a>
+					}
+				</td>
+			</tr>
+		}
+
+	</table>
+	</div>

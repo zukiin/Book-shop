@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <!-- Bootstrap Core CSS -->
+   
+    <link href="~/Content1/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- MetisMenu CSS -->
+    <link href="~/Content1/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <!-- Timeline CSS -->
+    <link href="~/Content1/dist/css/timeline.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="~/Content1/dist/css/sb-admin-2.css" rel="stylesheet">
+    <!-- Morris Charts CSS -->
+    <link href="~/Content1/bower_components/morrisjs/morris.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="~/Content1/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" style="font-family:Algerian" href="index.html">HYPE ADMIN</a>
+            </div>
+            
+                <li class="dropdown">
+                    
+                    @Html.Partial("_LoginPartial")
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+					<ul class="nav" id="side-menu">
+						<li class="sidebar-search">
+							<div class="input-group custom-search-form">
+								<input type="text" class="form-control" placeholder="Search...">
+								<span class="input-group-btn">
+									<button class="btn btn-default" type="button">
+										<i class="fa fa-search"></i>
+									</button>
+								</span>
+							</div>
+							<!-- /input-group -->
+						</li>
+						@if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+						{
+							<li>
+								<a href="~/Home/Admin"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+							</li>
+							<li>
+								<a href="~/ShoppingCart/AllOrders"><i class="fa fa-building fa-fw"></i>View Orders</a>
+							</li>
+							<li>
+								<a href="~/Suppliers/Index"><i class="fa fa-file-movie-o fa-fw"></i>Manage Suppliers</a>
+							</li>
+							<li>
+								<a href="~/Categories/Index"><i class="fa fa-file-movie-o fa-fw"></i>Manage Categories</a>
+							</li>
+							<li>
+								<a href="~/Genres/Index"><i class="fa fa-file-movie-o fa-fw"></i>Manage Genres</a>
+							</li>
+							<li>
+								<a href="~/Books/Index"><i class="fa fa-building fa-fw"></i>Manage Books</a>
+							</li>
+							<li>
+								<a href="~/Roles/Index"><i class="fa fa-bar-chart-o fa-fw"></i> Role Manager</a>
+							</li>
+						}
+						@if (User.Identity.IsAuthenticated && User.IsInRole("Customer"))
+						{
+							<li>
+								<a href="~/Home/Admin"><i class="fa fa-dashboard fa-fw"></i> Home</a>
+							</li>
+							<li>
+								<a href="~/Manage/AllOrders"><i class="fa fa-building fa-fw"></i>Profile</a>
+							</li>
+							<li>
+								<a href="~/ShoppingCart/Index"><i class="fa fa-file-movie-o fa-fw"></i>Cart</a>
+							</li>
+						}
+					</ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav> 
+        <div id="page-wrapper">
+            @RenderBody()
+        </div>
+        </div>
+    <!-- jQuery -->
+    <script src="~/Content1/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/Content1/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="~/Content1/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="~/Content1/dist/js/sb-admin-2.js"></script>
+<</body>
+</html>
+  
